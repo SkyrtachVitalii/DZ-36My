@@ -1,115 +1,31 @@
 import './App.scss';
 import AsideMenu from "./components/AsideMenu/AsideMenu";
-import Auto from "./components/Auto/Auto";
+import Autos from "./views/Autos/Autos";
+import AutosItem from "./views/Autos/AutosItem";
+import NotFound404 from "./views/NotFound404/NotFound404";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
 
-let autos= [
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-    title: "Tesla",
-    price: "$40000",
-    description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-    img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-    title: "Tesla",
-    price: "$40000",
-    description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-    img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-    title: "Tesla",
-    price: "$40000",
-    description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-    img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  },
-  {
-  title: "Tesla",
-  price: "$40000",
-  description: "dsoighs wegnjs sg ej loremhsdohsd sdfhds sdf sfsf his  sdifsd hsdif hsd hfisdh sdihf sidfhi shsdhfsdifhsdiuhiu hsdi f ds fsdiu  sdihifh iushdfiu  hiudsfh hdh hhi i i i i i i i ",
-  img: "https://3dnews.ru/assets/external/illustrations/2020/09/23/1021277/tesla1.jpg"
-  }
-]
-
-let autosItems = autos.map((auto, index) =>{
-  return <Auto auto={auto} key={index}/>
-})
-
   return (
+    <Router>
     <div className="App">
       <AsideMenu/>
       <div className="container">
-        <div className="autos-container">
-          {autosItems}
-        </div>
+        <Switch>
+          <Route exact path="/Autos">
+            <Autos/>
+          </Route>
+          <Route exact path="/Autos/:autoId">
+            <AutosItem />
+          </Route>
+          <Route path="*">
+            <NotFound404 />
+          </Route>
+        </Switch>
       </div>
     </div>
+    </Router>
   );
 }
 

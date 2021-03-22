@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Auto.scss';
 
 function Auto(props) {
@@ -10,7 +11,7 @@ function Auto(props) {
       <div className="Auto__title">{auto.title}</div>
       <div className="Auto__description">{auto.description}</div>
 			<div className="Auto__price">{auto.price}</div>
-			<div className="Auto__button">Детальніше</div>
+			<Link to={`/autos/${auto.id}`} className="Auto__button">Детальніше</Link>
     </div>
   );
 }
